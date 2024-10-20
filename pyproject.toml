@@ -1,0 +1,38 @@
+[project]
+name = "templatename"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "~=3.13.0"
+dependencies = []
+
+
+[tool.ruff]
+line-length = 110
+indent-width = 2
+fix = true
+
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "T201",   # print found
+  "TRY003", # Avoid specifying long messages outside the exception class
+  "D1",     # Docstrings are missing
+  "C901",   # Complexity is too high
+  "E111",   # indentation is not a multiple of four
+  "E114",   # indentation is not a multiple of four (comment)
+  "TD002",  # Missing author in TODO
+  "TD003",  # Mising issue link in TODO
+  "CPY",    # Copyright
+  "EM",     # Error  message
+]
+
+[tool.mypy]
+strict = true
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[tool.uv]
+dev-dependencies = ["mypy>=1.12.0", "ruff>=0.6.9"]
